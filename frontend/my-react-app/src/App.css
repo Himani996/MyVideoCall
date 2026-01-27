@@ -1,0 +1,120 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.landingContainer{
+  width:100vw;
+  height:100vh ;
+  background: url("/background2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+}
+
+.landingContainer nav{
+  padding-inline:1.2em;
+  padding-block: 1.6em;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landingContainer nav h2{
+font-weight: 500;
+font-size: 2.5em;
+}
+
+.landingContainer nav .navlist{
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+  gap:1.6rem;
+}
+
+.landingContainer nav .navlist .btn{
+padding-left:2em;
+padding-right:2em;
+padding-top:0.5em;
+padding-bottom:0.5em;
+border-radius: 10%;
+background-color: coral;
+color :white;}
+
+.landingContainer nav .navlist p{
+  font-size:1.5em;
+  font-weight: 300;
+}
+
+.landingMainContainer{
+  display: flex;
+  justify-content: space-between;
+    padding-inline:3rem ;
+  height:70vh;
+  align-items: center;
+  }
+
+  .landingMainContainer h2{
+    font-size: 3em;
+  }
+
+   .landingMainContainer h2 .pp{
+    font-size: 1.5em;
+   }
+
+   .landingMainContainer > div:nth-child(1) div[role='button']{
+background-color: coral;
+width:fit-content;
+padding:1rem;
+   }
+
+ .landingMainContainer > div:nth-child(1) div[role='button'] a{
+text-decoration: none;
+color:white;
+     }
+
+   .landingMainContainer > div:nth-child(1){
+    font-size: 2rem;
+   }
+
+.landingMainContainer > div:nth-child(2) img{
+  width:auto;
+  height:70vh;
+}
+
+.auth-btn {
+  padding: 10px 20px;
+  background: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+ .navBar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-right: 20px;
+  text-align: center;
+ }
+ .meetContainer{
+  display: flex;
+  padding-inline: 20px;
+  height:80vh;
+  gap:10vw;
+  justify-content: center;
+ }
+ .leftPanel{
+  height:100%;
+  display: flex;
+  align-items: center;
+ }
+ .rightPanel{
+  display:flex;
+  align-items: center;
+ }
+ .rightPanel> img{
+  width:30vw;
+  height:auto;
+  border-radius: 20px;
+ }
