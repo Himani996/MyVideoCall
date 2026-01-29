@@ -1,7 +1,7 @@
 
 
 import axios from "axios";
-import httpStatus from "http-status";
+import { StatusCodes as httpStatus } from "http-status-codes";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -69,25 +69,46 @@ export const AuthProvider = ({ children }) => {
       return [];
     }
 
+
     try {
-      const res = await axios.get(
-        "http://localhost:8000/api/v1/users/get_all_activity",
-        {
-          params: { token }, // ✅ token query param ke liye
-        }
-      );
-      console.log("HISTORY FROM API:", res.data);
-      // If backend returns object, convert to array
-      return Array.isArray(res.data.history)
-        ? res.data.history
-        : res.data
-        ? [res.data]
-        : [];
-    } catch (error) {
-      console.error("History fetch error:", error);
-      return [];
+  const res = await axios.get(
+    "http://localhost:8000/api/v1/users/get_all_activity",
+    {
+      params: { token },
     }
-  };
+  );
+
+  console.log("HISTORY FROM API:", res.data);
+
+  return Array.isArray(res.data.history)
+    ? res.data.history
+    : [];
+
+} catch (error) {
+  console.error("History fetch error:", error);
+  return [];
+}
+   }
+
+//     try {
+//       const res = await axios.get(
+//         "http://localhost:8000/api/v1/users/get_all_activity",
+//         {
+//           params: { token }, // ✅ token query param ke liye
+//         }
+//       );
+//       console.log("HISTORY FROM API:", res.data);
+//       // If backend returns object, convert to array
+//       return Array.isArray(res.data.history)
+//         ? res.data.history
+//         : res.data
+//         ? [res.data]
+//         : [];
+//     } catch (error) {
+//       console.error("History fetch error:", error);
+//       return [];
+//     }
+//   };
 
 
     const addToUserHistory = async (meetingCode) => {
