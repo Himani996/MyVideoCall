@@ -1,4 +1,4 @@
-import httpStatus from "http-Status";
+import { StatusCodes as httpStatus } from "http-status-codes";
 import {User} from "../models/users.models.js";
 import bcrypt ,{hash} from "bcrypt";
 import crypto from "crypto";
