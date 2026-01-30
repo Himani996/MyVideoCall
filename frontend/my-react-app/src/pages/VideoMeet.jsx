@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import io from "socket.io-client";
 import { Badge, IconButton, TextField } from '@mui/material';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom'
 import VideocamIcon from '@mui/icons-material/Videocam';
 import VideocamOffIcon from '@mui/icons-material/VideocamOff'
 import styles from "../styles/videoComponent.module.css";
@@ -29,7 +30,7 @@ export default function VideoMeetComponent() {
 
     var socketRef = useRef();
     let socketIdRef = useRef();
-
+let navigate=useNavigate();
     let localVideoref = useRef();
 
     let [videoAvailable, setVideoAvailable] = useState(true);
