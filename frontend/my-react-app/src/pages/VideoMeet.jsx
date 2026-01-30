@@ -385,10 +385,24 @@ let navigate=useNavigate();
         return Object.assign(stream.getVideoTracks()[0], { enabled: false })
     }
 
-    let handleVideo = () => {
-        setVideo(!video);
-        // getUserMedia();
-    }
+    // let handleVideo = () => {
+    //     setVideo(!video);
+    //     // getUserMedia();
+    // }
+
+      const handleVideo = () => {
+  if (!localVideoref.current?.srcObject) return;
+
+  const videoTrack =
+    localVideoref.current.srcObject
+      .getTracks()
+      .find(track => track.kind === "video");
+
+  if (videoTrack) {
+    videoTrack.enabled = !videoTrack.enabled;
+    setVideo(videoTrack.enabled);
+  }
+};
     let handleAudio = () => {
         setAudio(!audio)
         // getUserMedia();
